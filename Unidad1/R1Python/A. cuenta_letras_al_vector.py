@@ -8,7 +8,7 @@
 ##        print(f"La letra {chr(i + ord('a'))} aparece {contador[i]} veces")
 
 
-
+'''
 def contar_letras(cadena):
     conteo_letras = {chr(letra): 0 for letra in range(ord('a'), ord('z') + 1)}
     
@@ -22,3 +22,19 @@ def contar_letras(cadena):
     for letra, conteo in conteo_letras.items():
         if conteo > 0:
             print(f"La letra {letra} aparece {conteo} veces")
+            '''
+
+cadena = input()
+
+frecuencias = [0] * 26
+
+for letra in cadena:
+    indice = ord(letra) - ord('a')
+    frecuencias[indice] += 1
+
+print(*frecuencias)
+
+for i in range(26):
+    if frecuencias[i] > 0:
+        letra = chr(ord('a') + i)
+        print(f"La letra {letra} aparece {frecuencias[i]} veces")

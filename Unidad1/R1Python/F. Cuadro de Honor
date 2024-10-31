@@ -1,0 +1,18 @@
+N = int(input())  
+
+alumnos_honor = []  
+
+for i in range(N):
+    nombre = input()  
+    promedio = float(input()) 
+
+    if promedio >= 9.5: 
+        alumnos_honor.append(nombre)  
+
+alumnos_honor.sort()  
+
+for nombre in alumnos_honor:  
+    print(nombre)
+
+
+

@@ -1,3 +1,4 @@
+'''
 def ordenar_concursantes():
     nombres = []
     
@@ -12,3 +13,16 @@ def ordenar_concursantes():
     for nombre in nombres:
         print(nombre)
 
+'''
+
+nombres = []
+nombre = input()
+
+while nombre != "#":
+    nombres.append(nombre)
+    nombre = input()
+
+nombres.reverse()  
+
+for nombre in nombres:
+    print(nombre)
