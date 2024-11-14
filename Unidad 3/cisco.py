@@ -21,9 +21,7 @@ DNAC_PASS = env_lab.DNA_CENTER["password"]
 
 
 def get_auth_token():
-    """
-    Building out Auth request. Using requests.post to make a call to the Auth Endpoint
-    """
+    
     url = 'https://{}/dna/system/api/v1/auth/token'.format(DNAC_URL)                      
     hdr = {'content-type' : 'application/json'}                                           
     try:
@@ -37,7 +35,7 @@ def get_auth_token():
 
 def get_device_list():
    
-    token = get_auth_token() # Get Token
+    token = get_auth_token() 
     url = "https://{}/api/v1/network-device/1/4".format(DNAC_URL)
     hdr = {'x-auth-token': token, 'content-type' : 'application/json'}
     logging.captureWarnings(True)
@@ -81,7 +79,7 @@ def get_task_info(task_id, token):
         file_id = file_id.split(':')
         file_id = file_id[1]
         print("File ID --> ", file_id)
-    else:  # keep checking for task completion
+    else:  
         get_task_info(task_id, token)
     get_cmd_output(token, file_id)
 
